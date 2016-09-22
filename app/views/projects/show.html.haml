@@ -51,19 +51,19 @@
       - unless @repository.changelog
         %li.missing
           = link_to add_special_file_path(@project, file_name: 'CHANGELOG') do
-            Add Changelog
+            添加变更日志
       - unless @repository.license_blob
         %li.missing
           = link_to add_special_file_path(@project, file_name: 'LICENSE') do
-            Add License
+            添加许可证
       - unless @repository.contribution_guide
         %li.missing
-          = link_to add_special_file_path(@project, file_name: 'CONTRIBUTING.md', commit_message: 'Add contribution guide') do
+          = link_to add_special_file_path(@project, file_name: 'CONTRIBUTING.md', commit_message: '添加贡献指南') do
             Add Contribution guide
       - unless @repository.gitlab_ci_yml
         %li.missing
           = link_to add_special_file_path(@project, file_name: '.gitlab-ci.yml') do
-            Set Up CI
+            配置持续集成
 
     %li.project-repo-buttons-right
       .project-repo-buttons.project-right-buttons
