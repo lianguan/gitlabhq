@@ -21,8 +21,8 @@
   - if koding_enabled?
     = nav_link(controller: :koding) do
       = link_to koding_path, title: 'Koding' do
-      .icon-container
-        = icon('edit fw')
+        .icon-container
+          = icon('edit fw')
         %span
           Koding
   = nav_link(controller: [:groups, 'groups/milestones', 'groups/group_members']) do
