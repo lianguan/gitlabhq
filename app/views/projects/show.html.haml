@@ -19,13 +19,13 @@
         Files (#{repository_size})
     %li
       = link_to namespace_project_commits_path(@project.namespace, @project, current_ref) do
-        #{'Commit'.pluralize(@project.commit_count)} (#{number_with_delimiter(@project.commit_count)})
+        #{'提交'.pluralize(@project.commit_count)} (#{number_with_delimiter(@project.commit_count)})
     %li
       = link_to namespace_project_branches_path(@project.namespace, @project) do
-        #{'Branch'.pluralize(@repository.branch_count)} (#{number_with_delimiter(@repository.branch_count)})
+        #{'分支'.pluralize(@repository.branch_count)} (#{number_with_delimiter(@repository.branch_count)})
     %li
       = link_to namespace_project_tags_path(@project.namespace, @project) do
-        #{'Tag'.pluralize(@repository.tag_count)} (#{number_with_delimiter(@repository.tag_count)})
+        #{'标签'.pluralize(@repository.tag_count)} (#{number_with_delimiter(@repository.tag_count)})
 
     - if default_project_view != 'readme' && @repository.readme
       %li
@@ -33,7 +33,7 @@
 
     - if @repository.changelog
       %li
-        = link_to 'Changelog', changelog_path(@project)
+        = link_to '变更日志', changelog_path(@project)
 
     - if @repository.license_blob
       %li
@@ -41,11 +41,11 @@
 
     - if @repository.contribution_guide
       %li
-        = link_to 'Contribution guide', contribution_guide_path(@project)
+        = link_to '贡献指南', contribution_guide_path(@project)
 
     - if @repository.gitlab_ci_yml
       %li
-        = link_to 'CI configuration', ci_configuration_path(@project)
+        = link_to '持续集成配置', ci_configuration_path(@project)
 
     - if current_user && can_push_branch?(@project, @project.default_branch)
       - unless @repository.changelog

@@ -28,13 +28,13 @@
           应用
 
     = nav_link(controller: :abuse_reports) do
-      = link_to admin_abuse_reports_path, title: "Abuse Reports" do
+      = link_to admin_abuse_reports_path, title: "敏感信息报告" do
         %span
-          Abuse Reports
+          敏感信息报告
           %span.badge.count= number_with_delimiter(AbuseReport.count(:all))
 
     - if askimet_enabled?
       = nav_link(controller: :spam_logs) do
-        = link_to admin_spam_logs_path, title: "Spam Logs" do
+        = link_to admin_spam_logs_path, title: "垃圾日志" do
           %span
-            Spam Logs
+            垃圾日志
