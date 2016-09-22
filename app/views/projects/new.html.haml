@@ -1,5 +1,5 @@
-- page_title    'New Project'
-- header_title  "Projects", dashboard_projects_path
+- page_title    '创建项目'
+- header_title  "项目", dashboard_projects_path
 
 .project-edit-container
   .project-edit-errors
@@ -7,7 +7,7 @@
   .row.prepend-top-default
     .col-lg-3.profile-settings-sidebar
       %h4.prepend-top-0
-        New project
+        创建项目
       %p
         Create or Import your project from popular Git services
     .col-lg-9
@@ -16,7 +16,7 @@
           .form-group.col-xs-12.col-sm-6
             = f.label :namespace_id, class: 'label-light' do
               %span
-                Project path
+                项目路径
             .form-group
               .input-group
                 - if current_user.can_select_namespace?
@@ -30,18 +30,18 @@
           .form-group.col-xs-12.col-sm-6.project-path
             = f.label :namespace_id, class: 'label-light' do
               %span
-                Project name
+                项目名称
             = f.text_field :path, placeholder: "my-awesome-project", class: "form-control", tabindex: 2, autofocus: true, required: true
         - if current_user.can_create_group?
           .help-block
-            Want to house several dependent projects under the same namespace?
-            = link_to "Create a group", new_group_path
+            想把相关项目放在同一名称空间下?
+            = link_to "创建群组", new_group_path
 
         - if import_sources_enabled?
           .project-import.js-toggle-container
             .form-group.clearfix
               = f.label :visibility_level, class: 'label-light' do
-                Import project from
+                从第三方导入项目
               .col-sm-12.import-buttons
                 %div
                   - if github_import_enabled?
@@ -81,18 +81,18 @@
 
         .form-group
           = f.label :description, class: 'label-light' do
-            Project description
-            %span.light (optional)
-          = f.text_area :description, placeholder: 'Description format',  class: "form-control", rows: 3, maxlength: 250
+            项目简介
+            %span.light (可选)
+          = f.text_area :description, placeholder: '项目简介',  class: "form-control", rows: 3, maxlength: 250
 
         .form-group.project-visibility-level-holder
           = f.label :visibility_level, class: 'label-light' do
-            Visibility Level
+            显示等级
             = link_to "(?)", help_page_path("public_access/public_access")
           = render('shared/visibility_radios', model_method: :visibility_level, form: f, selected_level: @project.visibility_level, form_model: @project)
 
-        = f.submit 'Create project', class: "btn btn-create project-submit", tabindex: 4
-        = link_to 'Cancel', dashboard_projects_path, class: 'btn btn-cancel'
+        = f.submit '创建项目', class: "btn btn-create project-submit", tabindex: 4
+        = link_to '取消', dashboard_projects_path, class: 'btn btn-cancel'
 
 .save-project-loader.hide
   .center

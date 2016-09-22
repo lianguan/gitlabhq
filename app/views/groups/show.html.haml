@@ -28,18 +28,18 @@
     %ul.nav-links
       %li.active
         = link_to "#projects", 'data-toggle' => 'tab' do
-          All Projects
+          全部项目
       - if @shared_projects.present?
         %li
           = link_to "#shared", 'data-toggle' => 'tab' do
-            Shared Projects
+            星标项目
     .nav-controls
       = form_tag request.path, method: :get, class: 'project-filter-form', id: 'project-filter-form' do |f|
         = search_field_tag :filter_projects, nil, placeholder: 'Filter by name', class: 'projects-list-filter form-control', spellcheck: false
       = render 'shared/projects/dropdown'
       - if can? current_user, :create_projects, @group
         = link_to new_project_path(namespace_id: @group.id), class: 'btn btn-new pull-right' do
-          New Project
+          创建项目
 
   .tab-content
     .tab-pane.active#projects

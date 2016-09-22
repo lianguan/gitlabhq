@@ -10,7 +10,7 @@
       = form_tag admin_namespaces_projects_path, method: :get do |f|
         .search-holder
           .search-field-holder
-            = search_field_tag :name, params[:name], class: "form-control search-text-input js-search-input", id: "dashboard_search", autofocus: true, spellcheck: false, placeholder: 'Search by name'
+            = search_field_tag :name, params[:name], class: "form-control search-text-input js-search-input", id: "dashboard_search", autofocus: true, spellcheck: false, placeholder: '按项目名称搜索'
 
             - if params[:visibility_level].present?
               = hidden_field_tag 'visibility_level', params[:visibility_level]
@@ -27,18 +27,18 @@
             = icon("search", class: "search-icon")
 
           .dropdown
-            - toggle_text = 'Search for Namespace'
+            - toggle_text = '以名称空间搜索'
             - if params[:namespace_id].present?
               - namespace = Namespace.find(params[:namespace_id])
               - toggle_text = "#{namespace.kind}: #{namespace.path}"
             = dropdown_toggle(toggle_text, { toggle: 'dropdown' }, { toggle_class: 'js-namespace-select large' })
             .dropdown-menu.dropdown-select.dropdown-menu-align-right
-              = dropdown_title('Namespaces')
-              = dropdown_filter("Search for Namespace")
+              = dropdown_title('名称空间')
+              = dropdown_filter("搜索名称空间")
               = dropdown_content
               = dropdown_loading
 
-          = button_tag "Search", class: "btn btn-primary btn-search"
+          = button_tag "搜索", class: "btn btn-primary btn-search"
 
     %ul.nav-links
       - opts = params[:visibility_level].present? ? {} : { page: admin_namespaces_projects_path }
@@ -59,7 +59,7 @@
     .nav-controls
       = render 'shared/projects/dropdown'
       = link_to new_project_path, class: 'btn btn-new' do
-        New Project
+        创建项目
 
   .projects-list-holder
     - if @projects.any?

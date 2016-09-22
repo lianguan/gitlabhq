@@ -17,7 +17,7 @@
   %ul.content-list
     - if @milestones.blank?
       %li
-        .nothing-here-block 还没有任何里程碑
+        .nothing-here-block 没有里程碑
     - else
       - @milestones.each do |milestone|
         = render 'milestone', milestone: milestone

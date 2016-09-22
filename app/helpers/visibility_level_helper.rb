@@ -29,11 +29,11 @@ module VisibilityLevelHelper
   def project_visibility_level_description(level)
     case level
     when Gitlab::VisibilityLevel::PRIVATE
-      "Project access must be granted explicitly to each user."
+      "对其他用户不可见."
     when Gitlab::VisibilityLevel::INTERNAL
-      "The project can be cloned by any logged in user."
+      "项目可被任意登录用户克隆."
     when Gitlab::VisibilityLevel::PUBLIC
-      "The project can be cloned without any authentication."
+      "项目可被未登录用户克隆."
     end
   end
 

@@ -39,7 +39,7 @@
   - @groups.each do |group|
     = render 'shared/groups/group', group: group
   - unless @groups.present?
-    .nothing-here-block No public groups
+    .nothing-here-block 没有公开的群组
 
 
 = paginate @groups, theme: "gitlab"

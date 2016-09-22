@@ -2,6 +2,6 @@
   = render partial: 'shared/snippets/snippet', collection: @snippets
   - if @snippets.empty?
     %li
-      .nothing-here-block 没有代码片段.
+      .nothing-here-block 没有代码片段
 
 = paginate @snippets, theme: 'gitlab'

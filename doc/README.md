@@ -1,6 +1,6 @@
-# Documentation
+# 文档
 
-## User documentation
+## 普通用户文档
 
 - [API](api/README.md) Automate GitLab via a simple and powerful API.
 - [CI/CD](ci/README.md) GitLab Continuous Integration (CI) and Continuous Delivery (CD) getting started, `.gitlab-ci.yml` options, and examples.
@@ -19,7 +19,7 @@
 - [Webhooks](web_hooks/web_hooks.md) Let GitLab notify you when new code has been pushed to your project.
 - [Workflow](workflow/README.md) Using GitLab functionality and importing projects from GitHub and SVN.
 
-## Administrator documentation
+## 管理员文档
 
 - [Access restrictions](user/admin_area/settings/visibility_and_access_controls.md#enabled-git-access-protocols) Define which Git access protocols can be used to talk to GitLab
 - [Authentication/Authorization](administration/auth/README.md) Configure
