@@ -4,7 +4,7 @@
       = link_to '#', class: 'nav-header-btn toggle-nav-collapse', title: "打开/关闭" do
         %span.sr-only Toggle navigation
         = icon('bars')
-      = link_to '#', class: "nav-header-btn pin-nav-btn has-tooltip #{'is-active' if pinned_nav?} js-nav-pin", title: pinned_nav? ? "隐藏导航" : "显示导航", data: {placement: 'right', container: 'body'} do
+      = link_to '#', class: "nav-header-btn pin-nav-btn has-tooltip #{'is-active' if pinned_nav?} js-nav-pin", title: pinned_nav? ? "收缩导航" : "固定导航", data: {placement: 'right', container: 'body'} do
         %span.sr-only Toggle navigation pinning
         = icon('fw thumb-tack')
 

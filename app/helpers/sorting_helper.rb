@@ -36,7 +36,7 @@ module SortingHelper
   end
 
   def sort_title_priority
-    'Priority'
+    '优先级'
   end
 
   def sort_title_oldest_updated
@@ -52,7 +52,7 @@ module SortingHelper
   end
 
   def sort_title_recently_created
-    '最旧创建'
+    '最近创建'
   end
 
   def sort_title_milestone_soon

@@ -18,4 +18,8 @@ docker build -t gitlab --rm .
 
 `patch -d /opt/gitlab/embedded/service/gitlab-rails/app/ -p1 < ../zh_CN.diff`
 
+### 重启gitlab
+
+`gitlab-ctl restart`
+
 

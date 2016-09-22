@@ -1,5 +1,5 @@
 - if current_user
-  = link_to toggle_star_namespace_project_path(@project.namespace, @project), { class: 'btn star-btn toggle-star has-tooltip', method: :post, remote: true, title: current_user.starred?(@project) ? '取消星标' : '星标' } do
+  = link_to toggle_star_namespace_project_path(@project.namespace, @project), { class: 'btn star-btn toggle-star has-tooltip', method: :post, remote: true, title: current_user.starred?(@project) ? '取消星标' : '加注星标' } do
     - if current_user.starred?(@project)
       = icon('star')
       %span.starred Unstar

@@ -5,11 +5,11 @@
 .detail-page-header
   .status-box{ class: "status-box-#{milestone.closed? ? 'closed' : 'open'}" }
     - if milestone.closed?
-      Closed
+      已关闭
     - elsif milestone.expired?
-      Expired
+      过期的
     - else
-      Open
+      未关闭
   %span.identifier
     Milestone #{milestone.title}
   - if milestone.expires_at
