@@ -5,6 +5,8 @@
         项目
   = nav_link(controller: :todos) do
     = link_to dashboard_todos_path, title: '待办事项' do
+      .icon-container
+        = icon('bell fw')
       %span
         待办事项
         %span.count= number_with_delimiter(todos_pending_count)
