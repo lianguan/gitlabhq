@@ -1,10 +1,10 @@
 .login-box
   - if signup_enabled?
     .login-heading
-      %h3 Existing user? Sign in
+      %h3 我已注册， 现在登录
   - else
     .login-heading
-      %h3 Sign in
+      %h3 登录
   .login-body
     - if form_based_providers.any?
       %ul.nav-links
