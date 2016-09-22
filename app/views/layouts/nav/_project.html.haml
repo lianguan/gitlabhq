@@ -66,9 +66,9 @@
 
     - if project_nav_tab? :issues
       = nav_link(controller: [:issues, :labels, :milestones, :boards]) do
-        = link_to namespace_project_issues_path(@project.namespace, @project), title: '问题', class: 'shortcuts-issues' do
+        = link_to namespace_project_issues_path(@project.namespace, @project), title: '工单', class: 'shortcuts-issues' do
           %span
-            问题
+            工单
             - if @project.default_issues_tracker?
               %span.badge.count.issue_counter= number_with_delimiter(@project.issues.visible_to_user(current_user).opened.count)
 
@@ -100,7 +100,7 @@
     -# Shortcut to create a new issue
     %li.hidden
       = link_to new_namespace_project_issue_path(@project.namespace, @project), class: 'shortcuts-new-issue' do
-        创建问题
+        创建工单
 
     -# Shortcut to builds page
     - if project_nav_tab? :builds

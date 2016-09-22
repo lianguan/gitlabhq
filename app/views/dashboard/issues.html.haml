@@ -1,5 +1,5 @@
-- page_title "问题"
-- header_title  "问题", issues_dashboard_path(assignee_id: current_user.id)
+- page_title "工单"
+- header_title  "工单", issues_dashboard_path(assignee_id: current_user.id)
 = content_for :meta_tags do
   - if current_user
     = auto_discovery_link_tag(:atom, issues_dashboard_url(format: :atom, private_token: current_user.private_token), title: "#{current_user.name} issues")
@@ -12,7 +12,7 @@
         = icon('rss')
         %span.icon-label
           Subscribe
-    = render 'shared/new_project_item_select', path: 'issues/new', label: "创建问题"
+    = render 'shared/new_project_item_select', path: 'issues/new', label: "创建工单"
 
 = render 'shared/issuable/filter', type: :issues
 
