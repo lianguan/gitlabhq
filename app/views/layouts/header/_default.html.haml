@@ -13,7 +13,7 @@
           %li.hidden-sm.hidden-xs
             = render 'layouts/search' unless current_controller?(:search)
           %li.visible-sm.visible-xs
-            = link_to search_path, title: 'Search', aria: { label: "Search" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
+            = link_to search_path, title: '搜索', aria: { label: "搜索" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
               = icon('search')
           - if current_user
             - if session[:impersonator_id]
@@ -22,16 +22,16 @@
                   = icon('user-secret fw')
             - if current_user.is_admin?
               %li
-                = link_to admin_root_path, title: 'Admin Area', aria: { label: "Admin Area" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
+                = link_to admin_root_path, title: '后台管理', aria: { label: "后台管理" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
                   = icon('wrench fw')
             %li
-              = link_to dashboard_todos_path, title: 'Todos', aria: { label: "Todos" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
+              = link_to dashboard_todos_path, title: '待办事项', aria: { label: "待办事项" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
                 = icon('bell fw')
                 %span.badge.todos-pending-count{ class: ("hidden" if todos_pending_count == 0) }
                   = todos_pending_count
             - if current_user.can_create_project?
               %li
-                = link_to new_project_path, title: 'New project', aria: { label: "New project" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
+                = link_to new_project_path, title: '创建项目', aria: { label: "创建项目" }, data: {toggle: 'tooltip', placement: 'bottom', container: 'body'} do
                   = icon('plus fw')
             - if Gitlab::Sherlock.enabled?
               %li
@@ -45,16 +45,16 @@
               .dropdown-menu-nav.dropdown-menu-align-right
                 %ul
                   %li
-                    = link_to "Profile", current_user, class: 'profile-link', aria: { label: "Profile" }, data: { user: current_user.username }
+                    = link_to "我的首页", current_user, class: 'profile-link', aria: { label: "我的首页" }, data: { user: current_user.username }
                   %li
-                    = link_to "Profile Settings", profile_path, aria: { label: "Profile Settings" }
+                    = link_to "个人设置", profile_path, aria: { label: "个人设置" }
                   %li.divider
                   %li
-                    = link_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out-link", aria: { label: "Sign out" }
+                    = link_to "退出", destroy_user_session_path, method: :delete, class: "sign-out-link", aria: { label: "退出" }
           - else
             %li
               %div
-                = link_to "Sign in", new_session_path(:user, redirect_to_referer: 'yes'), class: 'btn btn-sign-in btn-success'
+                = link_to "登录", new_session_path(:user, redirect_to_referer: 'yes'), class: 'btn btn-sign-in btn-success'
 
 
       %h1.title= title
