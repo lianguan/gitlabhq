@@ -43,19 +43,19 @@
 
     - if @merge_request.source_branch_exists? && @merge_request.mergeable? && @merge_request.can_be_merged_by?(current_user)
       .light.prepend-top-default.append-bottom-default
-        You can also accept this merge request manually using the
+        你也可以手动接受合并请求
         = succeed '.' do
-          = link_to "command line", "#modal_merge_info", class: "how_to_merge_link vlink", title: "How To Merge", "data-toggle" => "modal"
+          = link_to "合并命令", "#modal_merge_info", class: "how_to_merge_link vlink", title: "How To Merge", "data-toggle" => "modal"
 
     - if @commits_count.nonzero?
       %ul.merge-request-tabs.nav-links.no-top.no-bottom
         %li.notes-tab
           = link_to namespace_project_merge_request_path(@project.namespace, @project, @merge_request), data: { target: 'div#notes', action: 'notes', toggle: 'tab' } do
-            Discussion
+            讨论
             %span.badge= @merge_request.mr_and_commit_notes.user.count
         %li.commits-tab
           = link_to commits_namespace_project_merge_request_path(@project.namespace, @project, @merge_request), data: { target: 'div#commits', action: 'commits', toggle: 'tab' } do
-            Commits
+            提交
             %span.badge= @commits_count
         - if @pipeline
           %li.pipelines-tab
@@ -68,7 +68,7 @@
               %span.badge= @statuses.size
         %li.diffs-tab
           = link_to diffs_namespace_project_merge_request_path(@project.namespace, @project, @merge_request), data: { target: 'div#diffs', action: 'diffs', toggle: 'tab' } do
-            Changes
+            变更
             %span.badge= @merge_request.diff_size
         %li#resolve-count-app.line-resolve-all-container.pull-right.prepend-top-10.hidden-xs{ "v-cloak" => true }
           %resolve-count{ "inline-template" => true, ":logged-out" => "#{current_user.nil?}"  }
