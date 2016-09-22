@@ -16,7 +16,7 @@
   %ul.nav
     %li
       = link_to project_files_path(@project) do
-        Files (#{repository_size})
+        文件 (#{repository_size})
     %li
       = link_to namespace_project_commits_path(@project.namespace, @project, current_ref) do
         #{'提交'} (#{number_with_delimiter(@project.commit_count)})

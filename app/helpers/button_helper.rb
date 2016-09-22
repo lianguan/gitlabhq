@@ -21,7 +21,7 @@ module ButtonHelper
       class: "btn btn-clipboard",
       data: data,
       type: :button,
-      title: "Copy to Clipboard"
+      title: "拷贝到剪贴板"
   end
 
   def http_clone_button(project, placement = 'right', append_link: true)
