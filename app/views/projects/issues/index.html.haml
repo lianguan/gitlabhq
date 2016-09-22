@@ -1,5 +1,5 @@
 - @no_container = true
-- page_title "Issues"
+- page_title "工单"
 - new_issue_email = @project.new_issue_address(current_user)
 = render "projects/issues/head"
 
@@ -24,9 +24,9 @@
                                                      issue: { assignee_id: issues_finder.assignee.try(:id),
                                                               milestone_id: issues_finder.milestones.first.try(:id) }),
                                                      class: "btn btn-new",
-                                                     title: "New Issue",
+                                                     title: "创建工单",
                                                      id: "new_issue_link" do
-            New Issue
+            创建工单
     = render 'shared/issuable/filter', type: :issues
 
     .issues-holder
@@ -36,18 +36,18 @@
   - else
     .blank-state.blank-state-welcome
       %h2.blank-state-title.blank-state-welcome-title
-        Welcome to GitLab Issues
+        欢迎来到工单系统
       %p.blank-state-text
-        Code, test, and deploy together
+        代码、测试、部署等相关的话题都可以在这里讨论。
     .blank-state
       .blank-state-icon
         = custom_icon("issues", size: 50)
       %h3.blank-state-title
-        You don't have any issues right now.
+        还没有任何工单.
       %p.blank-state-text
-        Issues are the best way to track your project progress
+        工单是跟踪项目进度的最好方式
       - if can? current_user, :create_issue, @project
-        = link_to new_namespace_project_issue_path(@project.namespace, @project), class: "btn btn-new", title: "New Issue", id: "new_issue_link" do
-          New Issue
+        = link_to new_namespace_project_issue_path(@project.namespace, @project), class: "btn btn-new", title: "创建工单", id: "new_issue_link" do
+          创建工单
         - if new_issue_email
           = render 'issue_by_email', email: new_issue_email
