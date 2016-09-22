@@ -49,9 +49,9 @@
             = dropdown_tag("Status", options: { toggle_class: "js-issue-status", title: "Change status", dropdown_class: "dropdown-menu-status dropdown-menu-selectable", data: { field_name: "update[state_event]" } } ) do
               %ul
                 %li
-                  %a{href: "#", data: {id: "reopen"}} Open
+                  %a{href: "#", data: {id: "reopen"}} 未关闭
                 %li
-                  %a{href: "#", data: {id: "close"}} Closed
+                  %a{href: "#", data: {id: "close"}} 已关闭
           .filter-item.inline
             = dropdown_tag("Assignee", options: { toggle_class: "js-user-search js-update-assignee js-filter-submit js-filter-bulk-update", title: "Assign to", filter: true, dropdown_class: "dropdown-menu-user dropdown-menu-selectable",
               placeholder: "Search authors", data: { first_user: (current_user.username if current_user), null_user: true, current_user: true, project_id: @project.id, field_name: "update[assignee_id]" } })
