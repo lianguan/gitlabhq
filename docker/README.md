@@ -10,7 +10,7 @@ docker build -t gitlab --rm .
 
 ## 替换正式环境
 
-### 生成不定文件
+### 生成补丁文件
 
 `diff -uNr /opt/gitlab/embedded/service/gitlab-rails/app app/ > ../zh_CN.diff`
 
